@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://jackfmx.github.io/2015/10/16/UIButton/</loc>
+    <lastmod>2015-11-04T18:15:45.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://jackfmx.github.io//404.html</loc>
     <lastmod>2015-11-04T12:55:47.000Z</lastmod>
   </url>
@@ -9,21 +14,6 @@
   <url>
     <loc>http://jackfmx.github.io/about/index.html</loc>
     <lastmod>2015-11-04T12:45:52.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://jackfmx.github.io/2015/11/04/UIButton/</loc>
-    <lastmod>2015-11-04T07:58:17.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://jackfmx.github.io/2015/10/16/jack-test/</loc>
-    <lastmod>2015-10-16T10:55:25.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://jackfmx.github.io/2015/10/16/hello-world/</loc>
-    <lastmod>2015-10-16T10:20:16.000Z</lastmod>
   </url>
   
 </urlset>
