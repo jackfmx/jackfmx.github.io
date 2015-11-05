@@ -224,119 +224,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="UIButton">UIButton</h1><!-- More -->
-<h3 id="Button_Types">Button Types</h3><pre><code>typedef <span class="class"><span class="keyword">enum</span> {</span>
-    <span class="constant">UIButtonTypeCustom</span> = <span class="number">0</span>,<span class="regexp">//</span>自定义类型
-    <span class="constant">UIButtonTypeSystem</span>,<span class="regexp">//</span>类似导航栏和工具栏的系统按钮样式,若使用此样式，在使用setImage时会显示异常
-    <span class="constant">UIButtonTypeDetailDisclosure</span>,
-    <span class="constant">UIButtonTypeInfoLight</span>,
-    <span class="constant">UIButtonTypeInfoDark</span>,<span class="regexp">//</span>圆圈加i
-    <span class="constant">UIButtonTypeContactAdd</span>,<span class="regexp">//</span>圆圈加+
-    <span class="constant">UIButtonTypeRoundedRect</span>,<span class="regexp">//</span>舍弃 用system代替
-} <span class="constant">UIButtonType</span>;
-</code></pre><h3 id="Creating_Buttons">Creating Buttons</h3><pre><code><span class="built_in">UIButton</span> *btn1 = [<span class="built_in">UIButton</span> buttonWithType:<span class="built_in">UIButtonType</span>*];
-<span class="built_in">UIButton</span> *btn2 = [[<span class="built_in">UIButon</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(x,x,x,x)];
-</code></pre><h3 id="Button’s_titleLabel">Button’s titleLabel</h3><pre><code><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>, retain) <span class="built_in">UILabel</span> *titleLabel    
-</code></pre><blockquote>
-<p>虽然titleLabel是只读的，但是他自己的属性是可读写的(font,lineBreakMode)。</p>
-<p>不要使用 <code>.语法</code>来设置label的text、textcolor、textshadowcolor，要用setTitle* forState</p>
-</blockquote>
-<p>   state :</p>
-<pre><code><span class="built_in">UIControlStateNormal</span>                <span class="comment">//常规状态显现 </span>
-<span class="built_in">UIControlStateHighlighted</span>           <span class="comment">//高亮状态显现(被按下去时)</span>
-<span class="built_in">UIControlStateDisabled</span>              <span class="comment">//禁用的状态才会显现</span>
-<span class="built_in">UIControlStateSelected</span>              <span class="comment">//选中状态</span>
-<span class="built_in">UIControlStateApplication</span>            <span class="comment">//当应用程序标志时 </span>
-<span class="built_in">UIControlStateReserved</span>              <span class="comment">//为内部框架预留，可以不管他 </span>
-</code></pre><p>-</p>
-<pre><code>//返回在某个状态下，按钮标题的富文本
-- (NSAttributedString *)attributedTitleForState:(UIControlState)<span class="keyword">state</span>
-
-//返回按钮在某个状态下的标题颜色
-- (UIColor *)titleColorForState:(UIControlState)<span class="keyword">state</span>
-
-//设置某个状态下按钮标题的阴影颜色
-- (void)<span class="built_in">set</span>TitleShadowColor:(UIColor *)color
-                   <span class="keyword">for</span>State:(UIControlState)<span class="keyword">state</span>
-
-//标题的阴影改变时，按钮是否高亮显示。默认为NO
-@property(nonatomic) BOOL reversesTitleShadowWhenHighlighted
-</code></pre><h3 id="Button’s_Presentation">Button’s Presentation</h3><pre><code><span class="comment">//按钮高亮的情况下，图像的颜色是否要加深一点。默认是YES，(是否有高亮状态)</span>
-<span class="variable">@property</span>(nonatomic) BOOL adjustsImageWhenHighlighted    
-
-<span class="comment">//按钮禁用的情况下，图像的颜色是否要加深一点。默认是YES</span>
-<span class="variable">@property</span>(nonatomic) BOOL adjustsImageWhenDisabled
-
-<span class="comment">//按下按钮是否会发光。默认是NO</span>
-<span class="variable">@property</span>(nonatomic) BOOL showsTouchWhenHighlighted
-
-<span class="comment">//设置按钮的背景图片(图片被拉伸)</span>
-- (void)<span class="attribute">setBackgroundImage</span>:(UIImage *)image <span class="attribute">forState</span>:(UIControlState)state
-<span class="comment">//设置按钮的背景图片(保持原大小)</span>
-- (void)<span class="attribute">setBackgroundImage</span>:(UIImage *)image <span class="attribute">forState</span>:(UIControlState)state
-</code></pre><h3 id="Button’s_Edge_Inset">Button’s Edge Inset</h3><pre><code><span class="comment">//设置按钮的内部内容（包含按钮图片和标题）离按钮边缘上下左右的距离。</span>
-<span class="variable">@property</span>(nonatomic) UIEdgeInsets contentEdgeInsets
-
-<span class="comment">//设置按钮的内部标题离按钮边缘上下左右的距离</span>
-<span class="variable">@property</span>(nonatomic) UIEdgeInsets titleEdgeInsets
-
-<span class="comment">//设置按钮的内部图片离按钮边缘上下左右的距离</span>
-<span class="variable">@property</span>(nonatomic) UIEdgeInsets imageEdgeInsets
-</code></pre><p>eg.</p>
-<pre><code><span class="type">UIEdgeInsets</span> insets;    <span class="comment">// 设置间距</span>
-insets.top = insets.bottom = insets.<span class="keyword">right</span> = insets.<span class="keyword">left</span> = <span class="number">10</span>;
-btn.contentEdgeInsets = insets;<span class="comment">//按钮按钮内部</span>
-btn.contentEdgeInsets = insets;<span class="comment">//标题间距</span>
-btn.contentEdgeInsets = insets;<span class="comment">//图片间距</span>
-</code></pre><h3 id="Get_Button’s_State">Get Button’s State</h3><pre><code><span class="comment">//获取按钮状态，只读属性</span>
-<span class="variable">@property</span>(nonatomic, readonly) UIButtonType buttonType
-
-<span class="comment">//获取按钮当前标题，只读属性</span>
-<span class="variable">@property</span>(nonatomic, readonly, retain) NSString *currentTitle
-
-<span class="comment">//获取按钮当前的富文本标题</span>
-<span class="variable">@property</span>(nonatomic, readonly, retain) NSAttributedString *currentAttributedTitle
-
-<span class="comment">//获取当前标题的颜色</span>
-<span class="variable">@property</span>(nonatomic, readonly, retain) UIColor *currentTitleColor
-
-<span class="comment">//获取当前标题的阴影颜色</span>
-<span class="variable">@property</span>(nonatomic, readonly, retain) UIColor *currentTitleShadowColor
-
-<span class="comment">//获取当前按钮的图片</span>
-<span class="variable">@property</span>(nonatomic, readonly, retain) UIImage *currentImage
-
-<span class="comment">//获取当前按钮的背景图片</span>
-<span class="variable">@property</span>(nonatomic, readonly, retain) UIImage *currentBackgroundImage
-
-<span class="comment">//获取当前按钮的图片框对象</span>
-<span class="variable">@property</span>(nonatomic, readonly, retain) UIImageView *imageView
-</code></pre><h3 id="Button’s_Events">Button’s Events</h3><p>//给按钮添加点击事件<br>[button addTarget:self action:@selector(action:) forControlEvents:UIControlEventTouchUpInside];</p>
-<pre><code><span class="built_in">UIControlEventTouchDown</span>                 <span class="comment">// 单点触摸按下事件：用户点触屏幕，或者又有新手指落下的时候。</span>
-<span class="built_in">UIControlEventTouchDownRepeat</span>       <span class="comment">// 多点触摸按下事件，点触计数大于1：用户按下第二、三、或第四根手指的时候。</span>
-<span class="built_in">UIControlEventTouchDragInside</span>       <span class="comment">// 当一次触摸在控件窗口内拖动时。</span>
-<span class="built_in">UIControlEventTouchDragOutside</span>      <span class="comment">// 当一次触摸在控件窗口之外拖动时。</span>
-<span class="built_in">UIControlEventTouchDragEnter</span>        <span class="comment">// 当一次触摸从控件窗口之外拖动到内部时</span>
-<span class="built_in">UIControlEventTouchDragExit</span>         <span class="comment">// 当一次触摸从控件窗口内部拖动到外部时。</span>
-<span class="built_in">UIControlEventTouchUpInside</span>         <span class="comment">// 所有在控件之内触摸抬起事件</span>
-<span class="built_in">UIControlEventTouchUpOutside</span>        <span class="comment">// 所有在控件之外触摸抬起事件(点触必须开始与控件内部才会发送通知)。</span>
-<span class="built_in">UIControlEventTouchCancel</span>           <span class="comment">//所有触摸取消事件，即一次触摸因为放上了太多手指而被取消，或者被上锁或者电话呼叫打断。</span>
-<span class="built_in">UIControlEventValueChanged</span>          <span class="comment">// 当控件的值发生改变时，发送通知。用于滑块、分段控件、以及其他取值的控件。你可以配置滑块控件何时发送通知，在滑块被放下时发送，或者在被拖动时发送。</span>
-<span class="built_in">UIControlEventEditingDidBegin</span>       <span class="comment">// 当文本控件中开始编辑时发送通知</span>
-<span class="built_in">UIControlEventEditingChanged</span>        <span class="comment">// 当文本控件中的文本被改变时发送通知。</span>
-<span class="built_in">UIControlEventEditingDidEnd</span>         <span class="comment">// 当文本控件中编辑结束时发送通知。</span>
-<span class="built_in">UIControlEventEditingDidEndOnExit</span>   <span class="comment">// 当文本控件内通过按下回车键（或等价行为）结束编辑时，发送通知。</span>
-<span class="built_in">UIControlEventAllTouchEvents</span>        <span class="comment">// 通知所有触摸事件。</span>
-<span class="built_in">UIControlEventAllEditingEvents</span>      <span class="comment">// 通知所有关于文本编辑的事件。</span>
-<span class="built_in">UIControlEventApplicationReserved</span>   <span class="comment">// range available for application use</span>
-<span class="built_in">UIControlEventSystemReserved</span>        <span class="comment">// range reserved for internal framework use</span>
-<span class="built_in">UIControlEventAllEvents</span>             <span class="comment">// 通知所有事件</span>
-</code></pre><p> 常按事件</p>
-<pre><code> <span class="comment">//长按按钮</span>
-UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc]<span class="string">initWithTarget:</span>self <span class="string">action:</span><span class="annotation">@selector</span>(btnLongPressedWithButton)];
-<span class="comment">//    longPress.minimumPressDuration = 0.5;    //最短按压时间,一般地，此句不写也可以</span>
-[btn1 <span class="string">addGestureRecognizer:</span>longPress];
-</code></pre>
+        <h1 id="UIButton">UIButton</h1>
       
       
     </div>
@@ -354,6 +242,10 @@ UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc]<
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UIButton/">UIButton</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
 	</div>
 
+      
+        <p class="article-more-link">
+          <a  href="/2015/10/16/UIButton/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
