@@ -5,16 +5,28 @@
   
   <title>UIButton详解 | Jack King</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="UIButton">
+  <meta name="description" content="UIButtonButton Typestypedef enum {
+    UIButtonTypeCustom = 0,//自定义类型
+    UIButtonTypeSystem,//类似导航栏和工具栏的系统按钮样式,若使用此样式，在使用setImage时会显示异常
+    UIButtonTypeDetailDisclosure,
+    UIButtonTypeInfoLight,">
 <meta property="og:type" content="article">
 <meta property="og:title" content="UIButton详解">
 <meta property="og:url" content="http://jackfmx.github.io/2015/10/16/UIButton/index.html">
 <meta property="og:site_name" content="Jack King">
-<meta property="og:description" content="UIButton">
-<meta property="og:updated_time" content="2015-11-05T07:23:29.000Z">
+<meta property="og:description" content="UIButtonButton Typestypedef enum {
+    UIButtonTypeCustom = 0,//自定义类型
+    UIButtonTypeSystem,//类似导航栏和工具栏的系统按钮样式,若使用此样式，在使用setImage时会显示异常
+    UIButtonTypeDetailDisclosure,
+    UIButtonTypeInfoLight,">
+<meta property="og:updated_time" content="2015-11-05T07:30:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UIButton详解">
-<meta name="twitter:description" content="UIButton">
+<meta name="twitter:description" content="UIButtonButton Typestypedef enum {
+    UIButtonTypeCustom = 0,//自定义类型
+    UIButtonTypeSystem,//类似导航栏和工具栏的系统按钮样式,若使用此样式，在使用setImage时会显示异常
+    UIButtonTypeDetailDisclosure,
+    UIButtonTypeInfoLight,">
   
     <link rel="alternative" href="/atom.xml" title="Jack King" type="application/atom+xml">
   
@@ -223,7 +235,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/目录/">目录</a>
+	<a class="article-category-link" href="/categories/iOS/">iOS</a>
 	</div>
 
 
@@ -238,8 +250,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="UIButton">UIButton</h1><a id="more"></a>
-<h3 id="Button_Types">Button Types</h3><pre><code>typedef <span class="class"><span class="keyword">enum</span> {</span>
+        <h1 id="UIButton">UIButton</h1><h3 id="Button_Types">Button Types</h3><pre><code>typedef <span class="class"><span class="keyword">enum</span> {</span>
     <span class="constant">UIButtonTypeCustom</span> = <span class="number">0</span>,<span class="regexp">//</span>自定义类型
     <span class="constant">UIButtonTypeSystem</span>,<span class="regexp">//</span>类似导航栏和工具栏的系统按钮样式,若使用此样式，在使用setImage时会显示异常
     <span class="constant">UIButtonTypeDetailDisclosure</span>,
@@ -248,7 +259,8 @@
     <span class="constant">UIButtonTypeContactAdd</span>,<span class="regexp">//</span>圆圈加+
     <span class="constant">UIButtonTypeRoundedRect</span>,<span class="regexp">//</span>舍弃 用system代替
 } <span class="constant">UIButtonType</span>;
-</code></pre><h3 id="Creating_Buttons">Creating Buttons</h3><pre><code><span class="built_in">UIButton</span> *btn1 = [<span class="built_in">UIButton</span> buttonWithType:<span class="built_in">UIButtonType</span>*];
+</code></pre><a id="more"></a>
+<h3 id="Creating_Buttons">Creating Buttons</h3><pre><code><span class="built_in">UIButton</span> *btn1 = [<span class="built_in">UIButton</span> buttonWithType:<span class="built_in">UIButtonType</span>*];
 <span class="built_in">UIButton</span> *btn2 = [[<span class="built_in">UIButon</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(x,x,x,x)];
 </code></pre><h3 id="Button’s_titleLabel">Button’s titleLabel</h3><pre><code><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>, retain) <span class="built_in">UILabel</span> *titleLabel    
 </code></pre><blockquote>

@@ -224,7 +224,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="UIButton">UIButton</h1>
+        <h1 id="UIButton">UIButton</h1><h3 id="Button_Types">Button Types</h3><pre><code>typedef <span class="class"><span class="keyword">enum</span> {</span>
+    <span class="constant">UIButtonTypeCustom</span> = <span class="number">0</span>,<span class="regexp">//</span>自定义类型
+    <span class="constant">UIButtonTypeSystem</span>,<span class="regexp">//</span>类似导航栏和工具栏的系统按钮样式,若使用此样式，在使用setImage时会显示异常
+    <span class="constant">UIButtonTypeDetailDisclosure</span>,
+    <span class="constant">UIButtonTypeInfoLight</span>,
+    <span class="constant">UIButtonTypeInfoDark</span>,<span class="regexp">//</span>圆圈加i
+    <span class="constant">UIButtonTypeContactAdd</span>,<span class="regexp">//</span>圆圈加+
+    <span class="constant">UIButtonTypeRoundedRect</span>,<span class="regexp">//</span>舍弃 用system代替
+} <span class="constant">UIButtonType</span>;
+</code></pre>
       
       
     </div>
@@ -233,7 +242,7 @@
       
       
 	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/目录/">目录</a>
+	<a class="article-category-link" href="/categories/iOS/">iOS</a>
 	</div>
 
 
