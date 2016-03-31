@@ -3,18 +3,30 @@
 <head>
   <meta charset="utf-8">
   
-  <title>About | Jack King</title>
+  <title>软件工程复习 | Jack King</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Hello World!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="About">
-<meta property="og:url" content="http://jackfmx.github.io/about/index.html">
+  <meta name="description" content="模块化设计模块化的思想和关注点的分离
+包容变化是模块化的主要作用
+基本模块化的写法
+开-闭原则 对于扩展是开放的，对于修改是封闭的模块复用和系统复用分离业务逻辑层和数据存储层将系统模块放在不同的源文件中
+代码设计中的一些常见方法：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软件工程复习">
+<meta property="og:url" content="http://jackfmx.github.io/2015/12/10/se模块化设计/index.html">
 <meta property="og:site_name" content="Jack King">
-<meta property="og:description" content="Hello World!">
-<meta property="og:updated_time" content="2015-11-05T07:29:47.000Z">
+<meta property="og:description" content="模块化设计模块化的思想和关注点的分离
+包容变化是模块化的主要作用
+基本模块化的写法
+开-闭原则 对于扩展是开放的，对于修改是封闭的模块复用和系统复用分离业务逻辑层和数据存储层将系统模块放在不同的源文件中
+代码设计中的一些常见方法：">
+<meta property="og:updated_time" content="2016-03-31T05:02:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="About">
-<meta name="twitter:description" content="Hello World!">
+<meta name="twitter:title" content="软件工程复习">
+<meta name="twitter:description" content="模块化设计模块化的思想和关注点的分离
+包容变化是模块化的主要作用
+基本模块化的写法
+开-闭原则 对于扩展是开放的，对于修改是封闭的模块复用和系统复用分离业务逻辑层和数据存储层将系统模块放在不同的源文件中
+代码设计中的一些常见方法：">
   
     <link rel="alternative" href="/atom.xml" title="Jack King" type="application/atom+xml">
   
@@ -195,11 +207,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-se模块化设计" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/about/index.html" class="article-date">
-  	<time datetime="2015-11-04T12:45:52.000Z" itemprop="datePublished">2015-11-04</time>
+      <a href="/2015/12/10/se模块化设计/" class="article-date">
+  	<time datetime="2015-12-10T10:30:39.000Z" itemprop="datePublished">2015-12-10</time>
 </a>
     </div>
   
@@ -212,7 +224,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      About
+      软件工程复习
     </h1>
   
 
@@ -220,15 +232,99 @@
       
       <div class="article-info article-info-post">
         
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/软件工程/">软件工程</a>
+	</div>
+
 
         
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/软件工程/">软件工程</a></li></ul>
+	</div>
+
         <div class="clearfix"></div>
       </div>
       
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Hello_World!">Hello World!</h3>
+        <h3 id="模块化设计">模块化设计</h3><p>模块化的思想和关注点的分离</p>
+<p>包容变化是模块化的主要作用</p>
+<p>基本模块化的写法</p>
+<p>开-闭原则 对于扩展是开放的，对于修改是封闭的<br>模块复用和系统复用<br>分离业务逻辑层和数据存储层<br>将系统模块放在不同的源文件中</p>
+<p>代码设计中的一些常见方法：<br><a id="more"></a></p>
+<ul>
+<li>KISS （keep it simple &amp; stupid） 一个函数或方法只做一件事</li>
+<li>using design to frame the code 用设计来框代码 把设计转化成伪代码来描述整个系统的结构 including pseuducode 伪代码</li>
+<li>不要和陌生人说话原则</li>
+<li>合理利用Control Structures Data Structures 来简化代码</li>
+<li>一定要有错误处理</li>
+</ul>
+<h3 id="接口">接口</h3><p>接口定义了软件单元对系统其他部分提供的服务<br>函数名、参数、返回值是接口的三个显性要素<br>前置条件和质量属性是接口的两个隐性要素</p>
+<p>接口的五要素</p>
+<ul>
+<li>Purpose 接口的目标</li>
+<li>Precondition(assumption) 前置条件 (假设的条件)</li>
+<li>Protocols 参数、返回值类型、指针指向的数据格式</li>
+<li>Postconditions (visible effects)</li>
+<li>Quality attributes eg. 执行时间</li>
+</ul>
+<p>接口的分类</p>
+<ul>
+<li>共享数据或变量名</li>
+<li>call-in functions</li>
+<li>callback functions</li>
+<li>同步调用接口</li>
+<li>异步调用接口</li>
+</ul>
+<p>接口与模块之间的耦合程度的关系 高内聚低耦合</p>
+<p>Common Coupling 公共耦合 - 共享数据区或变量名<br>Stamp Coupling 标记耦合 - 复杂的数据结构在模块之间传递<br>Data Coupling 数据耦合 - 在模块之间只传递数据</p>
+<p>Generality ： Parameterizing Context，Removing preconditions， Simplifying postconditions</p>
+<p>通用接口设计 ： 参数化上下文，移除前置条件，简化后置条件</p>
+<p>###callback函数</p>
+<p>B函数指针作为A函数的参数传入A函数，当A函数运行时，通过函数指针找到B函数，从而执行B函数，B函数就是一个回调函数</p>
+<p>回调函数的作用是可以写出更加通用的程序，实现代码复用。一些通用逻辑写在A函数，而把一些具体的实现写在B函数，这样执行通用A函数的时候可以通过函数指针找到并运行B函数，实现了对A函数代码的复用。如果没有回调函数，那在执行A函数的时候只能执行一些固定的不可改变的逻辑，从而不能实现函数代码的复用</p>
+<p>C语言的库函数qsort函数中的参数cmp就是一个回调函数。qsort是一个通用的算法，而cmp函数包含了对具体的值的比较逻辑。Java中的事件也用到了回调函数</p>
+<h3 id="函数的可重入性">函数的可重入性</h3><p>可重入函数可以由多于一个任务并发使用，而不必担心数据错误。<br>不克重入函数不能由超过一个任务所共享，<strong>除非能确保函数的互斥（或者使用信号量，或者在代码的关键部分禁用中断）</strong><br>可重入函数要么使用本地变量，要么在使用全局变量时保护自己的数据</p>
+<p>可重入函数：</p>
+<ul>
+<li>不为连续的调用持有静态数据。</li>
+<li>不返回指向静态数据的指针；<strong>所有数据由函数的调用者提供</strong></li>
+<li>使用本地数据，或者通过制作全局数据的本地拷贝来保护全局数据。</li>
+<li>绝不会调用任何不可重入函数</li>
+</ul>
+<p>线程的关键特点是指令的执行流</p>
+<p>线程安全问题： 是由全局变量及静态变量而引起的。若每个线程中对于全局变量和静态变量只有读操作，而无写操作，一定是线程安全的；若有多个线程同时执行读写操作，一般都需要考虑线程同步，否则有可能影响线程安全。</p>
+<p>函数的可重入性与线程安全之间的关系</p>
+<ul>
+<li>可重入函数不一定是线程安全的</li>
+<li>可重入函数在多个线程中并发使用时是线程安全的，但不同的可重入函数（共享全局变量及静态变量）在多个线程中并发使用时会有线程安全问题（可能是线程安全也可能不是线程安全的）</li>
+<li>不可重入的函数一定不是线程安全的</li>
+</ul>
+<p>不同的质量视角</p>
+<ul>
+<li>产品的视角（内部质量）</li>
+<li>用户的视角 – 是不是对用户有帮助</li>
+<li>商业上下文的质量 – 投资回报和驱动力问题</li>
+<li>运营推广</li>
+<li>开源</li>
+</ul>
+<p>设计原则  分解系统功能和系统行为</p>
+<ul>
+<li>modularity模块化</li>
+<li>interfaces接口</li>
+<li>information hiding信息隐藏</li>
+<li>incremental development增量开发</li>
+<li>abstraction抽象</li>
+<li>generality一般化</li>
+</ul>
+<p>重构的目标是简化方案或优化设计<br>信息的隐藏是由接口定义来达成的<br>信息的隐藏可以提高软件的可维护性，即包容变化   </p>
+<ul>
+<li>隐藏数据的表现形式  – 信息内聚</li>
+<li>隐藏算法  – 功能内聚</li>
+</ul>
+<p>增量开发需要以模块化设计为前提条件</p>
+
       
       
     </div>
@@ -237,13 +333,13 @@
   
     
 <div class="copyright">
-  <p><span>本文标题:</span><a href="/about/index.html">About</a></p>
+  <p><span>本文标题:</span><a href="/2015/12/10/se模块化设计/">软件工程复习</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Jack King 的个人博客">Jack King</a></p>
-  <p><span>发布时间:</span>2015年11月4日 - 20时11分</p>
-  <p><span>最后更新:</span>2015年11月5日 - 15时11分</p>
+  <p><span>发布时间:</span>2015年12月10日 - 18时12分</p>
+  <p><span>最后更新:</span>2016年3月31日 - 13时03分</p>
   <p>
-    <span>原始链接:</span><a href="/about/index.html" title="About">http://jackfmx.github.io/about/index.html</a>
-    <span class="btn" data-clipboard-text="原文: http://jackfmx.github.io/about/index.html　　作者: Jack King" title="点击复制文章链接">
+    <span>原始链接:</span><a href="/2015/12/10/se模块化设计/" title="软件工程复习">http://jackfmx.github.io/2015/12/10/se模块化设计/</a>
+    <span class="btn" data-clipboard-text="原文: http://jackfmx.github.io/2015/12/10/se模块化设计/　　作者: Jack King" title="点击复制文章链接">
         <i class="fa fa-clipboard"></i>
     </span>
   </p>
@@ -265,6 +361,17 @@
 </style>
 
 
+
+<nav id="article-nav">
+  
+  
+    <div id="article-nav-older" class="article-nav-title">
+      <a href="/2015/11/09/软件工程学习总结/">
+        软件工程学习总结
+      </a>
+    </div>
+  
+</nav>
 
   
 </article>
@@ -289,7 +396,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="about/index.html" data-title="About" data-url="http://jackfmx.github.io/about/index.html"></div>
+	<div class="ds-thread" data-thread-key="2015/12/10/se模块化设计/" data-title="软件工程复习" data-url="http://jackfmx.github.io/2015/12/10/se模块化设计/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -322,6 +429,17 @@
     <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
     </div>
 
+
+  
+  
+    <div  class="post-nav-button">
+    <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+    <a href="/2015/11/09/软件工程学习总结/" title="下一篇: 软件工程学习总结">
+    <i class="fa fa-angle-right"></i>
+    </a>
+    </div>
+  
+    
 </div>
       <footer id="footer">
   <div class="outer">
@@ -357,7 +475,7 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
